@@ -1,0 +1,221 @@
+doctype html
+html(lang='en')
+    head
+        title Graineterie Richard Web Site
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel="stylesheet", href="../css/my_stylesheet.css")
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', rel='stylesheet')
+        link(href='https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css', rel="stylesheet")
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    body
+        .navigation-section
+            section.container-fluid
+                nav.navbar.navbar-default.navbar-fixed-top
+                    .container-fluid.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                        // Brand and toggle get grouped for better mobile display
+                        .navbar-header
+                            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+                                span.sr-only Toggle navigation
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a.navbar-brand(href='#')
+                                p(style="display: inline-block")#logo-text Graineterie Richard
+                                img.img-responsive#logo-image(src="https://i.imgsafe.org/ae016f2af9.png")
+
+
+                        // Collect the nav links, forms, and other content for toggling
+                        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                            ul.nav.navbar-nav.navbar-right
+                                li
+                                    a(href='../FR/home.html')
+                                        img.img-responsive(src="https://i.imgsafe.org/c8cdeb35b2.png")
+                                li.active
+                                    a.buttons-in-nav(href='#') Home
+                                li
+                                    a.buttons-in-nav(href='#') What We Sell
+                                li
+                                    a.buttons-in-nav(href='#') Photos
+                                li
+                                    a.buttons-in-nav(href='#') Plant Calendar
+                                li
+                                    a.buttons-in-nav(href='#') Contacts
+
+                        // /.navbar-collapse
+                    // /.container-fluid
+        section.container-fluid.header-section
+            header.header-out.container-fluid.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                .header-in.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.row
+                    br
+                    h1#main-site-header.text-center Graineterie Richard
+
+        .main-content.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            section.container-fluid
+                br
+                #myCarousel.carousel.slide(data-ride='carousel')
+                    // Indicators
+                    ol.carousel-indicators
+                        li.active(data-target='#myCarousel', data-slide-to='0')
+                        li(data-target='#myCarousel', data-slide-to='1')
+                        li(data-target='#myCarousel', data-slide-to='2')
+                        li(data-target='#myCarousel', data-slide-to='3')
+                    // Wrapper for slides
+                    .carousel-inner(role='listbox')
+                        .item.active
+                            //!!!!!all images size are 800x400
+                            img(src='https://i.imgsafe.org/a05df5c1ba.jpg', alt='Chania', width='460', height='345')
+                            p.carousel-header.text-center Hello
+                        .item
+                            img(src='https://i.imgsafe.org/a05df82629.jpg', alt='Chania', width='460', height='345')
+                            p.carousel-header.text-center World
+                        .item
+                            img(src='https://i.imgsafe.org/a05df48fbc.jpg', alt='Flower', width='460', height='345')
+                            p.carousel-header.text-center Awesome
+                        .item
+                            img(src='https://i.imgsafe.org/a05df6bfd3.jpg', alt='Flower', width='460', height='345')
+                            p.carousel-header.text-center Smart
+                    // Left and right controls
+                    a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+                        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                        span.sr-only Previous
+                    a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+                        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                        span.sr-only Next
+            // /.container
+            hr.main-section-hr
+
+            section.container-fluid#about
+                .row
+                    h2.text-center About Us
+                    img#main-site-logo-image.col-xs-12.col-md-4.col-sm-4.col-lg-4(src="https://i.imgsafe.org/b7c433711a.png")
+                    p.col-md-8.col-lg-8.col-sm-8.col-xs-12 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+            hr.main-section-hr
+            h1.text-center#fb-news-heading Our Recent News
+            section.container-fluid.news-fb-section(data-stellar-ratio="20")
+                .news-list.col-md-12
+                    ul
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!&nbsp;
+                                sup.label-new NEW
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+                        li
+                            h3.news-heading.text-center THE BEST NEWS!
+                            p.news-date 2016-11-03 16:03
+                            .row
+                                a(href="#").col-md-4.col-lg-4.col-xs-12.col-sm-3.text-center View on Facebook
+                                    img.img-responsive.news-image(src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/12832555_952993178151335_6564010284684713852_n.jpg?oh=3412a20fe429513c01899c010b164e82&oe=58A0FDA2")
+                                article.news.col-md-8.col-lg-8.col-xs-12.col-sm-9 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        hr.news-hr
+
+
+
+    section.footer-section.container-fluid
+        footer.footer-out.container-fluid.col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .footer-inner.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                .container-fluid
+                    .fb-share-button.col-md-10.col-md-offset-1(data-href='https://hexen-cool-javascript.000webhostapp.com/EN/home.html', data-layout='box_count', data-size='large', data-mobile-iframe='true')
+                        h2.text-center
+                            a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhexen-cool-javascript.000webhostapp.com%2FEN%2Fhome.html&src=sdkpreparse') Share
+                            |  our site on your facebook page!
+                    h6.text-center.col-md-12 by&nbsp;
+                        a(target="_blank", href="https://facebook.com/1802458666709961") Pavel Buidenkov
+
+
+
+
+
+
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" type="text/javascript")
+    script(src="https://cdn.jsdelivr.net/bootstrap.autohidingnavbar/1.0.6/jquery.bootstrap-autohidingnavbar.min.js" type="text/javascript")
+    script(src="../js/my_script.js" type="text/javascript")

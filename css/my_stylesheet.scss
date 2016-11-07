@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css?family=Itim');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+//navbar mixin
+$currentSeason: "autumn";
+
+$sectionHeadingsFontSize: 40px;
+$newsSectionBGColor: white;
+$carouselHeaderColor: white;
+$bgDefaultNavbar: #28f452;
+$bgHighlightNavbar: #3eb43c;
+$colFontDefault: #000000;
+$colFontHighlight: #ffffff;
+$dropDown: false;
+$stretchedCollapseMenuColor: #89e75a;
+
+//.collapsing, .in {background-color: $stretchedCollapseMenuColor}
+//.collapsing ul li a, .in ul li a {color: #5da847 !important;}
+//.collapsing ul li a:hover, .in ul li a:hover {color: #757575 !important;
+//$dropDown: false;
+
+@if ($currentSeason == "spring") {
+  $newsSectionBGColor: #f4ffea;
+  $bgDefaultNavbar: rgba(38, 214, 78, 0.95);
+  $bgHighlightNavbar: #3eb43c;
+  $colFontDefault: #000000;
+  $colFontHighlight: #ffffff;
+  $stretchedCollapseMenuColor: #89e75a;
+  $dropDown: false;
+} @else if ($currentSeason == "winter") {
+  $newsSectionBGColor: #c2d0ff;
+  $carouselHeaderColor: #00574e;
+  $bgDefaultNavbar: rgba(53, 63, 244, 0.96);
+  $bgHighlightNavbar: #2d27d4;
+  $colFontDefault: #ffffff;
+  $colFontHighlight: #959799;
+  $stretchedCollapseMenuColor: #6975e7;
+} @else if ($currentSeason == "autumn") {
+  $newsSectionBGColor: #ffeada;
+  $bgDefaultNavbar: rgba(215, 87, 40, 0.96);
+  $bgHighlightNavbar: #b3441f;
+  $colFontDefault: #ffffff;
+  $colFontHighlight: #b9bbbd;
+  $stretchedCollapseMenuColor: #f47e64;
+} @else if ($currentSeason == "summer") {
+  $newsSectionBGColor: #feffdd;
+  $carouselHeaderColor: black;
+  $bgDefaultNavbar: rgba(225, 205, 26, 0.96);
+  $bgHighlightNavbar: #bfaf15;
+  $colFontDefault: #1f1f1f;
+  $colFontHighlight: #918986;
+  $stretchedCollapseMenuColor: #ffe559;
+}
+//navbar
+
+.navbar-default {
+  background-color: $bgDefaultNavbar !important;
+  border-color: $bgHighlightNavbar !important;
+  .navbar-brand {
+    color: $colFontDefault !important;
+    &:hover, &:focus {
+      color: $colFontHighlight !important; }}
+  .navbar-text {
+    color: $colFontDefault !important; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colFontDefault !important;
+        &:hover,  &:focus {
+          color: $colFontHighlight !important; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefaultNavbar !important;
+          > li {
+            > a {
+              color: $colFontDefault !important;
+              &:hover,  &:focus {
+                color: $colFontHighlight !important;
+                background-color: $bgHighlightNavbar !important; }}
+            > .divider {
+              background-color: $bgHighlightNavbar !important;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colFontHighlight !important;
+          background-color: $bgHighlightNavbar !important; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colFontHighlight !important;
+        background-color: $bgHighlightNavbar !important; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colFontHighlight !important;
+        background-color: $bgHighlightNavbar !important; }}}
+  .navbar-toggle {
+    border-color: $bgHighlightNavbar !important;
+    &:hover, &:focus {
+      background-color: $bgHighlightNavbar !important; }
+    .icon-bar {
+      background-color: $colFontDefault !important; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colFontDefault !important; }
+  .navbar-link {
+    color: $colFontDefault !important;
+    &:hover {
+      color: $colFontHighlight !important; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colFontDefault !important;
+      &:hover, &:focus {
+        color: $colFontHighlight !important; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colFontHighlight !important;
+        background-color: $bgHighlightNavbar !important; }}}
+}
+
+////menu when collapsed
+//.navbar {background-color: #8e181b;}
+//.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {color: #f1f1f1;}
+//.navbar-default .navbar-nav > li > a:hover {color: black}
+//.navbar-default .navbar-nav > li > a:focus {color: #f1f1f1; background-color: #b27677;}
+
+@media only screen and (max-width: 766px) {
+  .collapsing, .in {background-color: $stretchedCollapseMenuColor}
+}
+
+//navbar
+
+
+
+@mixin header-footer-inner-bg-colors($season) {
+  @if ($season == "winter") {
+    background-color: #4b67ff !important;
+  } @else if ($season == "summer") {
+    background-color: #dacf56 !important;
+  } @else if ($season == "autumn") {
+    background-color: #d67926 !important;
+  } @else if ($season == "spring") {
+    background-color: #a1e24a !important;
+  }
+}
+
+@mixin header-footer-outer-bg-colors($season) {
+  @if ($season == "winter") {
+    background-color: #a5bcff !important;
+  } @else if ($season == "summer") {
+    background-color: #efe796 !important;
+  } @else if ($season == "autumn") {
+    background-color: #eeb174 !important;
+  } @else if ($season == "spring") {
+    background-color: #b4ff9c !important;
+  }
+}
+
+@mixin color_of_body_background($season) {
+  @if ($season == "winter") {
+    background-color: #e5f8ff !important;
+  } @else if ($season == "summer") {
+    background-color: #fff8e4 !important;
+  } @else if ($season == "autumn") {
+    background-color: #fff5ea !important;
+  } @else if ($season == "spring") {
+    background-color: #e9fde2 !important;
+  }
+}
+
+@mixin color_of_main_content_class($season) {
+  @if ($season == "winter") {
+    background-color: #daf5ff;
+  } @else if ($season == "summer") {
+    background-color: #fffcc4;
+  } @else if ($season == "autumn") {
+    background-color: #ffd8b8;
+  } @else if ($season == "spring") {
+    background-color: #d5fdc9;
+  }
+}
+
+@mixin color_of_carousel_background($season) {
+  @if ($season == "winter") {
+    background-color: lightblue;
+  } @else if ($season == "summer") {
+    background-color: #fffb46;
+  } @else if ($season == "autumn") {
+    background-color: orange;
+  } @else if ($season == "spring") {
+    background-color: limegreen;
+  }
+}
+
+body {
+  @include color_of_body_background($currentSeason);
+}
+
+.navbar-right {
+  font: {
+    family: 'Oswald', sans-serif;
+    size: 1.4em;
+  }
+}
+
+.navbar-brand {
+  padding-top: 0.5em !important;
+
+}
+
+#logo-text {
+  font: {
+    family: 'Great Vibes', cursive;
+    size: 1.5em;
+  }
+}
+
+#main-site-header {
+  font: {
+    family: 'Great Vibes', cursive;
+    size: 5em;
+  }
+  color: $colFontDefault;
+  margin-bottom: 0.2em;
+  text-shadow: 2px 2px 2px rgba(86,86,86, 1);
+}
+
+#logo-image {
+  margin-left: 1em !important;
+  display: inline-block;
+  height: 145% !important;
+
+}
+
+.header-style {
+  margin: {
+    left: 0;
+    right: 0;
+  }
+  @include header-footer-inner-bg-colors($currentSeason);
+}
+
+.navigation-section, .navigation-section > section {
+  padding: {
+    left: 0;
+    right: 0;
+  }
+}
+
+.footer-inner {
+  bottom: 0;
+  margin: {
+    left: 0;
+    right: 0;
+  }
+  height: 10em;
+  @include header-footer-outer-bg-colors($currentSeason);
+
+  h6 {
+    color: $colFontDefault;
+    a {
+      color: $colFontDefault;
+    }
+  }
+}
+
+.main-content {
+  padding: {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 2em;
+  }
+  //margin-bottom: -2em !important;
+
+  @include color_of_main_content_class($currentSeason);
+
+  -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 35px 1px rgba(0,0,0,0.75);
+
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  margin: auto;
+}
+
+.carousel{
+  -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+
+  -moz-border-radius: 10px; /* FF1+ */
+  -webkit-border-radius: 10px; /* Saf3-4, iOS 1+, Android 1.5+ */
+  border-radius: 10px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+  overflow:hidden;
+  z-index: 999;
+  @include color_of_carousel_background($currentSeason);
+}
+
+.carousel-indicators {
+  top: 2em;
+}
+
+.item {
+
+}
+
+.carousel-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: {
+    family: 'Itim';
+    size: 1.5em;
+  }
+  letter-spacing: 0.2em;
+  text-shadow: 4px 4px 2px rgba(191, 191, 191, 1);
+  color: $carouselHeaderColor;
+}
+
+nav {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  //height: 1em !important;
+
+  -webkit-box-shadow: 0px 2px 9px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 9px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 9px -1px rgba(0,0,0,0.75);
+}
+
+nav, .dropdown, .dropdown-menu {
+  z-index: 1020;
+}
+
+.header-section {
+  overflow: hidden;
+  width: 100% !important;
+}
+
+.header-section, .header-out {
+  margin-top: 0 !important;
+  padding: {
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+header {
+  margin: {
+    right: 0;
+    left: 0;
+  }
+  @include header-footer-outer-bg-colors($currentSeason);
+}
+
+.header-out {
+  //height: 10em;
+  z-index: 1002;
+  @include  header-footer-outer-bg-colors($currentSeason);
+}
+
+.header-in {
+
+  //height: 100% !important;
+  @include header-footer-inner-bg-colors($currentSeason);
+  z-index: 1003 !important;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+footer {
+  margin: {
+    right: 0;
+    left: 0;
+  }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 0;
+  background-color: #f5f5f5 !important;
+  z-index: 1002;
+}
+
+.footer-section, .footer-out {
+  margin-top: 0 !important;
+  padding: {
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+footer {
+  margin: {
+    right: 0;
+    left: 0;
+    top: 2em;
+  }
+  @include header-footer-outer-bg-colors($currentSeason);
+}
+
+.footer-out {
+  height: 10em;
+  z-index: 1002;
+  @include  header-footer-outer-bg-colors($currentSeason);
+}
+
+.footer-inner {
+  border: {
+    left-width: 2em;
+    right-width: 2em;
+  }
+  height: 100% !important;
+  @include header-footer-inner-bg-colors($currentSeason);
+  z-index: 1003 !important;
+}
+
+.news-fb-section {
+
+  margin: 2em !important;
+  background-color: $newsSectionBGColor;
+
+
+
+  -webkit-box-shadow: inset 0px -1px 26px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px -1px 26px -6px rgba(0,0,0,0.75);
+  box-shadow: inset 0px -1px 26px -6px rgba(0,0,0,0.75);
+
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.news-list {
+  width: 100% !important;
+  height: 100% !important;
+
+  max-height: 30em;
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.news-list > ul {
+  list-style-type: none;
+}
+
+.news-image {
+  border: 2px solid white;
+  background-color: white;
+  max-height: inherit;
+  max-width: 10em;
+  border-radius: 5px;
+}
+
+.news {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.51);
+
+  -webkit-border-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 5px;
+  -moz-border-radius-topleft: 0;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+}
+
+.news-hr {
+  width: 100% !important;
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8c8c inset;
+}
+
+#about {
+  margin: 2em;
+  .row {
+    h2 {
+      margin: {
+        top: 0;
+        bottom: 0.5em;
+      }
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: $sectionHeadingsFontSize;
+    }
+  }
+}
+
+#fb-news-heading, #contact-us-heading {
+  font-family: 'Oswald', sans-serif;
+  font-size: $sectionHeadingsFontSize;
+  letter-spacing: 0.05em;
+}
+
+.main-section-hr {
+  border : 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.news-date {
+  padding: 0.2em;
+  display: inline-block;
+  background-color: #d9d8d8;
+  font-style: italic;
+  font-size: 1.2em;
+  border-radius: 10px;
+
+  -webkit-box-shadow: inset 0px 0px 62px -16px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 62px -16px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 62px -16px rgba(0,0,0,0.75);
+
+}
+
+#exampleInputEmail2 {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100% !important;
+}
+
+#forms {
+  width: 100% !important;
+}
+
+.buttons-in-nav {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  border-left: grey 1px solid;
+}
+
+.news {
+  font: {
+    size: 1.3em;
+  }
+}
+
+.label-new {
+  background-color: crimson;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.5em;
+}
+
+#about > .row > p {
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 1.6em;
+  }
+}
+
+
+.fb-share-button {
+  h2 {
+    text-shadow: 2px 2px 2px rgba(86,86,86, 1);
+    color: $colFontDefault;
+    background-color: rgba(248, 248, 255, 0.3);
+    border-radius: 15px;
+    a {
+      color: $colFontDefault;
+      text-decoration: underline;
+      &:hover {
+        color: #4b67ff;
+      }
+    }
+  }
+}
