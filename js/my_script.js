@@ -1,36 +1,39 @@
+var allNewsJSON = {};
+
+var isFRlang = false;
+
+var monthNamesEN = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+];
+
+var monthNamesFR = [
+    "janvier", "février", "mars",
+    "avril", "mai", "juin", "juillet",
+    "août", "septembre", "octobre",
+    "novembre", "décembre"
+];
+
+$.ajax({
+    url: "https://raw.githubusercontent.com/graineterierichard/graineterierichard.github.io/master/js/helper-scripts/all_news_json/all_news_json.JSON",
+    async: false,
+    dataType: 'json',
+    success: function (data) {
+        allNewsJSON = data;
+    }
+});
+
 $(document).ready(function(){
     //autohid navbar plugin
     $('.navbar-fixed-top').autoHidingNavbar();
 
-    var isFRlang = false;
-
-    var monthNamesEN = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-    ];
-
-    var monthNamesFR = [
-        "janvier", "février", "mars",
-        "avril", "mai", "juin", "juillet",
-        "août", "septembre", "octobre",
-        "novembre", "décembre"
-    ];
-
-    var allNewsJSON;
-    
-    $.ajax({
-        url: "all_news_json/all_news_json.JSON",
-        async: false,
-        dataType: 'json',
-        success: function (data) {
-            allNewsJSON = data;
-        }
-    });
+    console.log(allNewsJSON.data);
 
     function addTwoNews() {
         for (i = 0; i<2; i++){
+            var message = (isFRlang) ? allNewsJSON.data[i].messageFR : allNewsJSON.data[i].messageEN;
             var liNode = document.createElement("LI");
             var h3HeadingNode = document.createElement("H3");
             var h3SpanHeadingNode = document.createElement("SPAN");
@@ -47,7 +50,7 @@ $(document).ready(function(){
             var monthName = (isFRlang) ? monthNamesFR[dateOfPost.getMonth()] : monthNamesEN[dateOfPost.getMonth()];
             var dateTextNode = document.createTextNode('' + dateOfPost.getDate() + " " + monthName + " " + dateOfPost.getFullYear());
             var liDivATextNode = document.createTextNode('View on Facebook');
-            var liDivArticleTextNode = document.createTextNode(allNewsJSON.data[i].message);
+            var liDivArticleTextNode = document.createTextNode(message);
 
             $(h3HeadingNode).html('&nbsp;');
 
@@ -61,11 +64,12 @@ $(document).ready(function(){
 
             liNode.appendChild(liDivNode);
 
-            liDivAImg.setAttribute('src', '' + allNewsJSON.posts.data[i].full_picture);
+            liDivAImg.setAttribute('src', '' + allNewsJSON.data[i].full_picture);
             liDivANode.appendChild(liDivAImg);
 
             liDivANode.appendChild(liDivATextNode);
-            liDivANode.setAttribute('href', 'https://facebook.com/' + allNewsJSON.posts.data[i].id);
+            liDivANode.setAttribute('href', 'https://facebook.com/' + allNewsJSON.data[i].id);
+            liDivANode.setAttribute('target', '_blank');
             liDivNode.appendChild(liDivANode);
 
             liDivArticleNode.appendChild(liDivArticleTextNode);
@@ -74,7 +78,7 @@ $(document).ready(function(){
             liNode.appendChild(liHr);
 
 
-            document.getElementsByTagName('body')[0].appendChild(liNode);
+            document.getElementById("news-reciever").appendChild(liNode);
 
             $(h3HeadingNode).addClass('news-heading text-center');
             $(h3SpanHeadingNode).addClass('label-new');
@@ -88,6 +92,8 @@ $(document).ready(function(){
     }
 
     addTwoNews();
+
+
 
     $('#show-more-btn').on('click', function() {
 
