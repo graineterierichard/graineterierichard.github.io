@@ -35,7 +35,7 @@ $(document).ready(function(){
         if (allNewsJSON.data[from]) {
             for (; from<upTo; from++){
                 var message = (isFRlang) ? allNewsJSON.data[from].messageFR : allNewsJSON.data[from].messageEN;
-                var liNode = document.createElement("LI");
+                var liNode1 = document.createElement("LI");
                 var h3HeadingNode = document.createElement("H3");
                 var h3SpanHeadingNode = document.createElement("SPAN");
                 var pDateNode = document.createElement("P");
@@ -58,12 +58,12 @@ $(document).ready(function(){
                 h3SpanHeadingNode.appendChild(h3SpanHeadingTextNode);
 
                 h3HeadingNode.appendChild(h3SpanHeadingNode);
-                liNode.appendChild(h3HeadingNode);
+                liNode1.appendChild(h3HeadingNode);
 
                 pDateNode.appendChild(dateTextNode);
-                liNode.appendChild(pDateNode);
+                liNode1.appendChild(pDateNode);
 
-                liNode.appendChild(liDivNode);
+                liNode1.appendChild(liDivNode);
 
                 liDivAImg.setAttribute('src', '' + allNewsJSON.data[from].full_picture);
                 liDivANode.appendChild(liDivAImg);
@@ -76,10 +76,10 @@ $(document).ready(function(){
                 liDivArticleNode.appendChild(liDivArticleTextNode);
                 liDivNode.appendChild(liDivArticleTextNode);
 
-                liNode.appendChild(liHr);
+                liNode1.appendChild(liHr);
 
 
-                document.getElementById("news-reciever").appendChild(liNode);
+                document.getElementById("news-reciever").appendChild(liNode1);
 
                 $(h3HeadingNode).addClass('news-heading text-center');
                 $(h3SpanHeadingNode).addClass('label-new');
@@ -96,10 +96,9 @@ $(document).ready(function(){
                 $(liHr).addClass('news-hr');
                 $(liHr).attr('id', 'scroll' + from);
 
-                $(liNode).attr("id", "news" + from);
-                // liNode.appendChild(document.createElement("A"));
-                // $(liNode > a).attr('href', )
-                $(liNode).addClass("animate fadeIn");
+                $(liNode1).attr("id", "news" + from);
+                $('.news-list > a').attr('href', '#news' + from);
+                $(liNode1).addClass("animate fadeIn");
             }
         }
     }
@@ -108,48 +107,19 @@ $(document).ready(function(){
 
     var from = 2;
     var upTo = 2;
-    var scrollTo = '#news' + from-1;
+    var scrollTo = "news" + from;
 
-    $('#show-more-btn').on('click', function() {
+
+    $('.news-list > a > #show-more-btn').on('click', function() {
         if ( $('#news'+(upTo-1)).length) {
+
             upTo += 2;
             addTwoNews(from, upTo);
             from += 2;
-            scrollTo = '#news' + from-1;
-            $('.news-list').localScroll({
-                target: scrollTo,
-                lazy: true
-            });
+            scrollTo = 'news' + (from-2);
+            $('.news-list').scrollTo(document.getElementById(scrollTo), 800);
 
-            // $('.news-list').animate({
-            //     scrollTop: $(scrollTo).offset().top
-            // }, 'slow');
-            // scrollTo = '#scroll' + from;
-            // $('.news-list > a').attr('href', "#news" + upTo);
-            // console.log(scrollTo);
         }
     });
-
-
-
-
-
-    // $('#show-more-btn').click(function () {
-    //     if ( $('#news'+scrollTo).length ) {
-    //         $('.news-list').animate({
-    //             scrollTop: $('#news' + scrollTo).offset().top
-    //             }, 'slow');
-    //             return false;
-    //         }
-    //     return false;
-    // });
 });
-
-// ///
-// $('.news-list, html, body').animate({
-//     scrollTop: $('#news'+scrollTo).offset().top
-// }, 'slow');
-// scrollTo += 2;
-// console.log(scrollTo);
-// return false;
 
