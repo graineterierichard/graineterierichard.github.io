@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 //navbar mixin
-$currentSeason: "autumn";
+$currentSeason: "winter";
 
 $sectionHeadingsFontSize: 40px;
 $newsSectionBGColor: white;
@@ -427,10 +427,10 @@ footer {
 
 .news-fb-section {
 
+  padding-left: 0;
+
   margin: 2em !important;
   background-color: $newsSectionBGColor;
-
-
 
   -webkit-box-shadow: inset 0px -1px 26px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px -1px 26px -6px rgba(0,0,0,0.75);
@@ -453,6 +453,15 @@ footer {
 
 .news-list > ul {
   list-style-type: none;
+  padding-left: 0;
+  li {
+    div{
+      a {
+        margin-left: 0;
+      }
+    }
+
+  }
 }
 
 .news-image {
@@ -576,4 +585,9 @@ footer {
       }
     }
   }
+}
+
+#show-more-btn {
+
+  bottom: 2px;
 }
