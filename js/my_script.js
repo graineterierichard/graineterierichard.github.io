@@ -87,7 +87,7 @@ $(document).ready(function(){
                 $(liDivNode).addClass('row');
 
                 if (message == "") {
-                    $(liDivANode).addClass('col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-lg-12 col-lg-offset-1 text-center');
+                    $(liDivANode).addClass('col-md-8 col-md-offset-2 col-xs-12 col-sm-12 col-lg-10 col-lg-offset-0 text-center');
                 } else {
                     $(liDivANode).addClass('col-md-4 col-lg-4 col-xs-12 col-sm-3 text-center');
                 }
